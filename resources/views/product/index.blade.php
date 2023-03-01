@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('title', 'product')
 @section('content')
-    <div class="container mt-3">
+    <div class="container mt-3 text-center">
         <div class="row">
             @php($i = 1)
             @foreach ($collections as $collection)
