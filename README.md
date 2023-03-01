@@ -16,7 +16,11 @@
 
 `php artisan migrate --seed`
 
-
 Запустить:
 
 `php artisan serve`
+
+
+Для получения новых данных:
+
+`php artisan migrate:fresh --seed`
