@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('title', 'product')
 @section('content')
-    <div class="container">
+    <div class="container mt-3">
         @foreach ($collections as $collection)
             <div class="row">
                 <div class="col-sm-4">
