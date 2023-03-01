@@ -18,6 +18,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $product->title }}</h5>
                                 <p class="card-text">Цена: {{ $product->price }}</p>
+                                <p class="card-text">Цена: {{ $collection->title }}</p>
                             </div>
                         </div>
                     </div>
