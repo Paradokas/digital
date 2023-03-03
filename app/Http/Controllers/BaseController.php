@@ -1,21 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Product;
-
-use App\Http\Controllers\Controller;
-use App\Models\Collection;
-use App\Models\CollectionProduct;
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use function view;
 
-class ProductController extends Controller
+class BaseController
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $collections = Collection::with('products')->get()->sortBy('title');
-        return view('product.index', compact('collections'));
+        return view('index');
     }
 
     /**

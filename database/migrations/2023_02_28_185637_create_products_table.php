@@ -16,6 +16,8 @@ return new class extends Migration {
             $table->unsignedDecimal('price');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->index('title');
         });
     }
 

@@ -16,11 +16,13 @@ class ProductFactory extends Factory
      * @return array<string, mixed>
      * @throws Exception
      */
+
     public function definition(): array
     {
         return [
-            'title' => 'Табурет #' . random_int(1001, 9999),
-            'price' => random_int(1000, 9999),
+            'title' => 'Табурет #' . $this->faker->unique()->numberBetween(10, 100),
+            'price' => $this->faker->randomFloat(2, 1000, 9999),
         ];
     }
+
 }

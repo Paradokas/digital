@@ -16,8 +16,9 @@ class CollectionFactory extends Factory
      */
     public function definition(): array
     {
+        static $collectionNumber = 1;
         return [
-            'title' => 'Коллекция ' . $this->faker->unique()->randomDigitNotZero(),
+            'title' => 'Коллекция ' . $collectionNumber++,
         ];
     }
 }

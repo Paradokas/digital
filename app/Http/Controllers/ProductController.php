@@ -1,18 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Collection;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Collection;
 use Illuminate\Http\Request;
+use function view;
 
-class CollectionController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $collections = Collection::with('products')->get();
+        return view('product.index', compact('collections'));
     }
 
     /**

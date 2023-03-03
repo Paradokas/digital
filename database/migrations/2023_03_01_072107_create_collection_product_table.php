@@ -12,11 +12,13 @@ return new class extends Migration {
     {
         Schema::create('collection_product', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('collection_id')->constrained();
-            $table->foreignId('product_id')->constrained();
+            $table->unsignedBigInteger('collection_id');
+            $table->unsignedBigInteger('product_id');
             $table->timestamps();
             $table->softDeletes();
 
+            $table->foreign('collection_id')->references('id')->on('collections');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('collection_products');
+        Schema::dropIfExists('collection_product');
     }
 };

@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\BaseController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/',  [ProductController::class, 'index']);
+Route::get('/',  [BaseController::class, 'index'])->name('home');
+Route::get('/products',  [ProductController::class, 'index'])->name('product.index');

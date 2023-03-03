@@ -13,8 +13,8 @@
     <title>@yield('title')</title>
 </head>
 <body>
-<div class="container">
+@include('layouts.header.header')
 @yield('content')
-</div>
+
 </body>
 </html>
