@@ -16,33 +16,13 @@ class DatabaseSeeder extends Seeder
      * @throws Exception
      */
 
-//    public function run()
-//    {
-//        $collections = Collection::factory()->count(6)->create();
-//
-//        foreach ($collections as $collection) {
-//            $products = Product::factory()->count(random_int(2, 7))->create();
-//            foreach ($products as $product) {
-//                $collectionProduct = new CollectionProduct([
-//                    'collection_id' => $collection->id,
-//                    'product_id' => $product->id,
-//                ]);
-//                $collectionProduct->save();
-//            }
-//        }
-//    }
-
-
-    public function run()
+    public function run(): void
     {
-        Collection::factory()
-            ->count(6)
-            ->afterCreating(function (Collection $collection) {
-                $collection->products()->createMany(
-                    Product::factory()->count(random_int(2, 7))->make()->toArray()
-                );
-            })
-            ->create();
+        for ($i = 0; $i < 6; $i++) {
+            Collection::factory()
+                ->has(Product::factory(random_int(2, 7)))
+                ->create();
+        }
     }
 }
 
