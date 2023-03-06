@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
     use HasFactory;
-    use softDeletes;
+    use SoftDeletes;
 
-    protected $fillable = ['title', 'collection_id'];
+    protected $fillable = ['title', 'collection_id', 'price'];
 
     public function collection(): BelongsTo
     {
